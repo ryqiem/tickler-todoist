@@ -3,6 +3,7 @@ import logging
 from datetime import datetime
 from pytodoist import todoist
 from pytodoist.api import TodoistAPI
+from credentials import USER, PASS
 
 #Setup loggging
 FORMAT = '%(asctime)-15s, %(levelname)s: %(message)s'
@@ -10,7 +11,7 @@ logging.basicConfig(level=logging.INFO, format=FORMAT)
 logger = logging.getLogger(__name__)
 
 #Setup todoists
-user = todoist.login('ryqiem@gmail.com', 'YpaPiY3P4CMbdUd')
+user = todoist.login(USER, PASS)
 logger.info("Finished setting up todoist login")
 
 #Setup datetime objects
@@ -18,7 +19,7 @@ today_object = datetime.today().date()
 
 #API setup
 api = TodoistAPI()
-response = api.login('ryqiem@gmail.com', 'YpaPiY3P4CMbdUd')
+response = api.login(USER, PASS)
 user_info = response.json()
 user_api_token = user_info['token']
 logger.info("API setup succesful")
