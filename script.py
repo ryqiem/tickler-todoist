@@ -60,13 +60,6 @@ def copy_due(inp, outp):
     time.sleep(duration) # Don't breach 50 requests/min limit from todoist API
 
 # Ticklers
-copy_due("Recurrent", "Actionable")
-copy_due("Tickler", "Actionable")
-copy_due("Computer", "Actionable")
-copy_due("Cleaning", "Actionable")
-copy_due("Planning", "Actionable")
-copy_due("Shopping", "Actionable")
-copy_due("Hygiene", "Actionable")
-
-# Someday
-copy_due("TSomeday", "Inbox-Someday, 0")
+copy_due("Recurrent", "Inbox")
+copy_due("Tickler", "Inbox")
+copy_due("Computer", "Inbox")
