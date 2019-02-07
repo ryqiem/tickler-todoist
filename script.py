@@ -50,10 +50,10 @@ def copy_due(inp, outp):
                 label_ids = task.labels
 
                 response = api.add_item(user_api_token, task.content, project_id=output_id, priority=task.priority, labels=str(label_ids))
-                logger.info("Created new task {i}".format(i=i))
+                logger.info("Created new {}".format(task.content))
 
                 task.complete()
-                logger.info("Completed old task {i}".format(i=i))
+                logger.info("Completed old task".format(i=i))
                 i += 1 # Update Iterator
 
     duration = 30
